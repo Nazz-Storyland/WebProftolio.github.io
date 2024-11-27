@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    /* Reset default margin & padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and layout */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #6a1b9a, #9c27b0); /* Ungu gradien */
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #ddd;
+    }
+
+    /* Portfolio Section */
+    .portfolio-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 50px;
+    }
+
+    /* Card Style for Portfolio Projects */
+    .portfolio-item {
+      background-color: #fff;
+      color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .portfolio-item h3 {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .portfolio-item p {
+      font-size: 16px;
+      margin: 15px 20px;
+      color: #777;
+    }
+
+    .portfolio-item a {
+      display: inline-block;
+      background-color: #9c27b0;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .portfolio-item a:hover {
+      background-color: #6a1b9a;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Portfolio</h1>
+    <p>Menampilkan proyek-proyek terbaik saya</p>
+  </header>
+
+  <!-- Portfolio Section -->
+  <div class="portfolio-container">
+    <!-- Portfolio Item 1 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Proyek 1">
+      <h3>Proyek 1</h3>
+      <p>Deskripsi singkat tentang proyek pertama saya, yang melibatkan pengembangan aplikasi mobile dan pengalaman pengguna.</p>
+      <a href="#">Lihat Proyek</a>
+    </div>
+
+    <!-- Portfolio Item 2 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Proyek 2">
+      <h3>Proyek 2</h3>
+      <p>Proyek kedua saya fokus pada pembuatan situs web interaktif yang menarik dan ramah pengguna.</p>
+      <a href="#">Lihat Proyek</a>
+    </div>
+
+    <!-- Portfolio Item 3 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Proyek 3">
+      <h3>Proyek 3</h3>
+      <p>Ini adalah proyek di mana saya membangun aplikasi berbasis AI yang memberikan solusi cerdas dalam analisis data.</p>
+      <a href="#">Lihat Proyek</a>
+    </div>
+
+    <!-- Portfolio Item 4 -->
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Proyek 4">
+      <h3>Proyek 4</h3>
+      <p>Proyek ini melibatkan desain UI/UX untuk platform e-commerce yang fokus pada pengalaman pengguna yang optimal.</p>
+      <a href="#">Lihat Proyek</a>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Portfolio Saya. Semua hak cipta dilindungi.</p>
+  </footer>
+
+</body>
+</html>

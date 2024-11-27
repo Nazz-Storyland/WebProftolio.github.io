@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yehezkiel Nanda - Web Designer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('bg1.jpg') center/cover no-repeat fixed; color: #fff; display: flex; flex-direction: column; }
+
+        /* Header styles */
+        header { background: rgba(0, 0, 0, 0.5); padding: 20px 0; position: relative; }
+        nav { display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; top: 0; left: 0; padding: 20px; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin: 0 15px; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; }
+
+        /* Container styles */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; flex: 1; }
+
+        /* Main styles */
+        main { display: flex; justify-content: space-between; align-items: center; padding: 50px 0; width: 100%; }
+        .content { max-width: 600px; flex: 1; }
+        .content h1 { font-size: 3em; }
+        .content h2 { font-size: 2em; }
+        .content p { font-size: 1.2em; line-height: 1.5; }
+        .social-links { display: flex; margin-top: 20px; }
+        .social-links a { margin-right: 10px; color: #fff; font-size: 1.5em; }
+        .image { flex: 1; margin-left: 30px; }
+        .image img { width: 100%; height: auto; }
+
+        /* Footer styles */
+        footer { text-align: center; padding: 20px 0; background: rgba(0, 0, 0, 0.5); margin-top: auto; }
+
+        /* Media query for responsive design */
+        @media screen and (max-width: 768px) {
+            main {
+                flex-direction: column; /* Stacking content and image on smaller screens */
+                padding: 20px 0;
+            }
+            .image {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+             /* Add CSS styles for the sidebar */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: #333;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 20px;
+    }
+
+    .sidebar ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+        }
+    </style>
+</head>
+<body>
+<div class="loading-container">
+  <div class="loading-spinner"></div>
+</div>
+<header data-aos="fade-down" data-aos-delay="300">
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">NANDA</a>
+            <ul>
+                <li data-aos="fade-down" data-aos-delay="300"><a href="index.html">HOME</a></li>
+                <li data-aos="fade-down" data-aos-delay="400"><a href="ABOUT.html">ABOUT</a></li>
+                <li data-aos="fade-down" data-aos-delay="500"><a href="service.html">SERVICES</a></li>
+                <li data-aos="fade-down" data-aos-delay="600"><a href="portfolio.html">PORTFOLIO</a></li>
+                <li data-aos="fade-down" data-aos-delay="700"><a href="BLOG.html">BLOG</a></li>
+                <li data-aos="fade-down" data-aos-delay="800"><a href="CONTACT.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="ABOUT.html">ABOUT</a></li>
+                <li><a href="service.html">SERVICES</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1  data-aos="fade-up">WELCOME!</h1>
+                <h2 data-aos="fade-left" data-aos-delay="600">I Am Web Designer</h2>
+                <p data-aos="zoom-up" data-aos-delay="700">Halo, saya Yehezkiel Nanda Pradana, Junior Web Developer yang belajar di SMK Pangudi Luhur Seputih Mataram. Saya menguasai HTML, CSS, JavaScript, dan mulai belajar framework serta tools populer. Di portfolio ini, Anda dapat melihat karya saya dalam desain web dan pengembangan front-end.</p>
+                <p data-aos="zoom-up" data-aos-delay="750">Saya terus berkembang dan siap untuk berkolaborasi atau belajar lebih lanjut!</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="image" data-aos="zoom-in" data-aos-delay="500">
+                <img src="my logo.png" alt="Masud Iqbal">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Hello, I Am Yehezkiel Nanda Pradana</p>
+        </div>
+    </footer>
+<script>
+    const logo = document.querySelector('.logo');
+    const sidebar = document.querySelector('.sidebar');
+
+    logo.addEventListener('click', () => {
+        sidebar.classList.toggle('show');
+    });
+
+    // Add this new function to close the sidebar when clicking outside of it
+    window.addEventListener('click', (event) => {
+        if (!event.target.closest('.sidebar') && !event.target.closest('.logo')) {
+            sidebar.classList.remove('show');
+        }
+    });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

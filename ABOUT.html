@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Reset default margin & padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and general layout */
+    body {
+      font-family: 'Arial', sans-serif;
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a1b9a, #2196f3); /* Gradient background */
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+      color: white;
+      text-align: center;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 36px;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+      z-index: 20;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #3b2fc3;
+      transform: scale(1.1);
+    }
+
+    /* Main section */
+    .about-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+      gap: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin: 40px 10%;
+      position: relative;
+      z-index: 5;
+      background-image:url(bg3.jpg);
+    }
+
+    .about-text {
+      flex: 1;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .about-text h2 {
+      font-size: 28px;
+      color:white;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      color: white;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      flex: 1;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button */
+    .cta-button {
+      display: inline-block;
+      background-color: #3b2fc3;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+      font-size: 14px;
+    }
+
+    /* Subtle animation for background */
+    @keyframes gradientAnimation {
+      0% { background: linear-gradient(135deg, #6a1b9a, #2196f3); }
+      50% { background: linear-gradient(135deg, #ff4081, #00bcd4); }
+      100% { background: linear-gradient(135deg, #6a1b9a, #2196f3); }
+    }
+
+    body {
+      animation: gradientAnimation 4s ease infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html" data-aos="fade-up" data-aos-delay="100">Beranda</a></li>
+      <li><a href="service.html" data-aos="fade-up" data-aos-delay="200">Service</a></li>
+      <li><a href="ABOUT.html" data-aos="fade-up" data-aos-delay="300">Tentang Saya</a></li>
+      <li><a href="Portfolio.html" data-aos="fade-up" data-aos-delay="400">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header data-aos="fade-down" data-aos-delay="400">
+    <h1 data-aos="fade-up" data-aos-delay="500">Tentang Kami</h1>
+  </header>
+
+  <!-- About Section -->
+  <div class="about-container" id="about" data-aos="zoom-in">
+    <!-- Text Section -->
+    <div class="about-text">
+      <h2 data-aos="fade-right" data-aos-delay="700">Siapa Kami?</h2>
+      <p data-aos="zoom-in" data-aos-delay="750"><strong>
+        Saya, Yehezkiel Nanda Pradana, adalah seorang profesional yang berfokus pada pengembangan solusi teknologi inovatif untuk meningkatkan kualitas hidup. Dengan latar belakang yang kuat di bidang teknologi dan inovasi, saya berkomitmen untuk menciptakan produk dan layanan yang dapat mempermudah kehidupan sehari-hari, meningkatkan efisiensi, dan mendorong produktivitas.</strong></p>
+
+<p>Misi saya adalah untuk menciptakan produk-produk yang tidak hanya canggih, tetapi juga ramah pengguna dan memiliki dampak positif bagi masyarakat di seluruh dunia. Saya berupaya untuk terus berkembang dan memberikan kontribusi nyata dalam menghadirkan solusi teknologi yang relevan dan bermanfaat.
+      </strong></p>
+      <a href="#contact" class="cta-button" data-aos="zoom-in">Hubungi Kami</a>
+    </div>
+
+    <!-- Image Section -->
+    <div class="about-image" data-aos="zoom-in" data-aos-delay="500">
+      <img src="coding1.jpg">
+      <img src="my logo.png">
+      <img src="coding2.jpg">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Perusahaan Teknologi. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
+
+</body>
+</html>
