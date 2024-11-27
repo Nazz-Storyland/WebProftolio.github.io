@@ -143,9 +143,51 @@
       width: 100%;
     }
 
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background: #333;
+      transition: left 0.3s ease-in-out;
+      z-index: 999;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #9c27b0;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="portfolio.html">Portofolio</a></li>
+      <li><a href="ABOUT.html">Tentang Saya</a></li>
+      <li><a href="service.html">Layanan</a></li>
+    </ul>
+  </div>
 
   <!-- Navigation Bar -->
   <nav>
@@ -203,10 +245,25 @@
     <p data-aos="fade-up">&copy; 2024 Portfolio Yehezkiel. Semua hak cipta dilindungi.</p>
   </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Sidebar toggle script
+    const logo = document.querySelector('.logo');
+    const sidebar = document.querySelector('.sidebar');
+
+    logo.addEventListener('click', () => {
+      sidebar.classList.toggle('show');
+    });
+
+    // Close sidebar when clicking outside of it
+    window.addEventListener('click', (event) => {
+      if (!event.target.closest('.sidebar') && !event.target.closest('.logo')) {
+        sidebar.classList.remove('show');
+      }
+    });
+  </script>
 
 </body>
 </html>
