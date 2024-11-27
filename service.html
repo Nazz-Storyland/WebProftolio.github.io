@@ -7,6 +7,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
 
+        /* General body and layout styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -56,7 +57,7 @@
             background-color: #555;
         }
     
-        /* Main styles */
+        /* Main section styles */
         main {
             padding: 40px 0;
         }
@@ -64,22 +65,24 @@
         main h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: white; /* Add this line to make the text white */
+            color: white; /* Make the heading text white */
         }
     
         .services {
             display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
             justify-content: space-between;
         }
     
         .service {
             flex: 1;
-            margin: 0 5px;
+            margin: 10px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             background-color: white;
+            transition: transform 0.3s ease;
         }
     
         .service h2 {
@@ -101,6 +104,45 @@
             bottom: 0;
             width: 100%;
         }
+    
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            /* Adjust the layout on smaller screens */
+            .service {
+                flex: 1 0 48%; /* Make each service take up around half the space */
+                margin: 10px 0; /* Reduce margin for smaller screens */
+            }
+            main h1 {
+                font-size: 24px; /* Make the heading smaller for smaller devices */
+            }
+            header .logo {
+                font-size: 20px; /* Smaller logo text for mobile */
+            }
+            header ul {
+                display: block;
+                text-align: center;
+            }
+            header ul li {
+                margin: 10px 0; /* Stack the navigation items */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Further adjustments for very small screens (smartphones) */
+            main h1 {
+                font-size: 20px;
+            }
+            .service {
+                flex: 1 0 100%; /* Stack the services vertically */
+            }
+            header .logo {
+                font-size: 18px;
+            }
+            header ul li a {
+                font-size: 16px; /* Make the menu items smaller */
+            }
+        }
+
    </style>
 </head>
 <body>
@@ -132,9 +174,7 @@
                 </div>
                 <div class="service" data-aos="flip-up" data-aos-delay="800">
                     <h2>SEO Optimization</h2>
-                    <p>Dengan pendekatan SEO yang terstruktur, saya membantu situs web Anda untuk tampil lebih tinggi di mesin pencari seperti Google. Saya menerapkan teknik-teknik optimasi SEO yang efektif, termasuk riset kata kunci, pengoptimalan konten, dan peningkatan kecepatan situs, untuk memastikan website Anda mudah ditemukan oleh audiens target. Fokus utama saya adalah untuk meningkatkan visibilitas online, menarik lebih banyak pengunjung, dan akhirnya, meningkatkan konversi serta ROI (Return on Investment) untuk bisnis Anda.
-
-</p>
+                    <p>Dengan pendekatan SEO yang terstruktur, saya membantu situs web Anda untuk tampil lebih tinggi di mesin pencari seperti Google. Saya menerapkan teknik-teknik optimasi SEO yang efektif, termasuk riset kata kunci, pengoptimalan konten, dan peningkatan kecepatan situs, untuk memastikan website Anda mudah ditemukan oleh audiens target. Fokus utama saya adalah untuk meningkatkan visibilitas online, menarik lebih banyak pengunjung, dan akhirnya, meningkatkan konversi serta ROI (Return on Investment) untuk bisnis Anda.</p>
                 </div>
             </section>
         </div>
@@ -147,9 +187,9 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 </html>
