@@ -4,266 +4,148 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* Reset default margin & padding */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Animasi Fade-In */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
-    /* Body and layout */
-    body {
-      font-family: 'Arial', sans-serif;
-      background-image: url('bgABOUT.jpg');
-      color: #fff;
-      line-height: 1.6;
-      margin-top: 80px; /* Adjusted for navbar height */
+    /* Animasi Slide-In */
+    @keyframes slide-in {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
-    /* Navigation Bar */
-    nav {
-      background-color: #333;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      padding: 10px 0;
+    /* Hover Animations */
+    .hover-scale:hover {
+      transform: scale(1.05);
+      transition: transform 0.4s ease-in-out;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
+    .hover-glow:hover {
+      text-shadow: 0 0 15px rgba(156, 39, 176, 0.8), 0 0 30px rgba(156, 39, 176, 0.6);
+      color: white;
+      transition: all 0.4s ease;
     }
 
-    nav ul li {
-      margin: 0 20px;
+    /* Applying animation smoothly */
+    .fade-in {
+      animation: fade-in 1.2s ease-out;
     }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      padding: 10px 20px;
-      display: block;
-      transition: background-color 0.3s ease;
+    .slide-in {
+      animation: slide-in 1s ease-out;
     }
 
-    nav ul li a:hover {
-      background-color: #9c27b0;
-      border-radius: 5px;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 100px 20px 60px 20px; /* Increased top padding for nav */
-    }
-
-    header h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 20px;
-      color: #ddd;
-    }
-
-    /* Portfolio Section */
-    .portfolio-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 50px;
-    }
-
-    /* Card Style for Portfolio Projects */
+    /* Animasi untuk portofolio dengan smooth transition */
     .portfolio-item {
-      background-color: #fff;
-      color: #333;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     }
 
     .portfolio-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .portfolio-item h3 {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-
-    .portfolio-item p {
-      font-size: 16px;
-      margin: 15px 20px;
-      color: #777;
-    }
-
-    .portfolio-item a {
-      display: inline-block;
-      background-color: #9c27b0;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 18px;
-      margin-bottom: 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    .portfolio-item a:hover {
-      background-color: #6a1b9a;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    /* Sidebar styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100vh;
-      background: #333;
-      transition: left 0.3s ease-in-out;
-      z-index: 999;
-    }
-
-    .sidebar.show {
-      left: 0;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 20px;
-    }
-
-    .sidebar ul li a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      padding: 10px;
-    }
-
-    .sidebar ul li a:hover {
-      background-color: #9c27b0;
-      border-radius: 5px;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
-<body>
-
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="portfolio.html">Portofolio</a></li>
-      <li><a href="ABOUT.html">Tentang Saya</a></li>
-      <li><a href="service.html">Layanan</a></li>
-    </ul>
-  </div>
+<body class="bg-gradient-to-r from-purple-600 to-blue-500 text-white">
 
   <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="portfolio.html">Portofolio</a></li>
-      <li><a href="ABOUT.html">Tentang Saya</a></li>
-      <li><a href="service.html">Layanan</a></li>
+  <nav class="fixed top-0 w-full bg-opacity-70 backdrop-blur-md py-4 z-50">
+    <ul class="flex justify-center gap-12">
+      <li><a href="index.html" class="text-lg text-white font-semibold hover:text-purple-300 transition duration-300 ease-in-out glowing-text">Beranda</a></li>
+      <li><a href="portfolio.html" class="text-lg text-white font-semibold hover:text-purple-300 transition duration-300 ease-in-out glowing-text">Portofolio</a></li>
+      <li><a href="ABOUT.html" class="text-lg text-white font-semibold hover:text-purple-300 transition duration-300 ease-in-out glowing-text">Tentang Saya</a></li>
+      <li><a href="service.html" class="text-lg text-white font-semibold hover:text-purple-300 transition duration-300 ease-in-out glowing-text">Layanan</a></li>
     </ul>
   </nav>
 
-  <!-- Header Section -->
-  <header id="home">
-    <h1 data-aos="zoom-in" data-aos-delay="500">Portfolio</h1>
-    <p data-aos="fade-right" data-aos-delay="600">Menampilkan proyek-proyek terbaik saya</p>
+  <!-- Header Section with Fade-In Animation -->
+  <header class="text-center py-40 fade-in" data-aos="fade-up" data-aos-delay="300">
+    <h1 class="text-5xl font-bold">Portfolio</h1>
+    <p class="text-xl mt-4 text-gray-200">Menampilkan proyek-proyek terbaik saya</p>
   </header>
 
-  <!-- Portfolio Section -->
-  <div class="portfolio-container" id="portfolio">
-    <!-- Portfolio Item 1 -->
-    <div class="portfolio-item" data-aos="zoom-in">
-      <img src="landingpage.jpg" alt="Proyek 1">
-      <h3 data-aos="zoom-in">Website Landing Page</h3>
-      <p>Landing page responsif dengan animasi dan elemen interaktif untuk tujuan pemasaran.</p>
-      <a href="#" data-aos="zoom-up" data-aos-delay="500">Lihat Proyek</a>
-    </div>
+  <!-- Deskripsi Singkat with Fade-In Animation -->
+  <div class="text-center mt-12 px-6 fade-in">
+    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+      Di sini, saya menampilkan berbagai proyek yang telah saya kerjakan, mulai dari desain web responsif hingga sistem manajemen konten. Setiap proyek menunjukkan keterampilan dan kreativitas saya dalam membangun aplikasi web yang fungsional dan menarik.
+    </p>
+  </div>
 
-    <!-- Portfolio Item 2 -->
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="600">
-      <img src="blogweb.jpeg" alt="Proyek 2">
-      <h3 data-aos="zoom-in">Website Blog</h3>
-      <p>Desain UI/UX modern untuk website blog dengan manajemen konten yang mudah.</p>
-      <a href="#" data-aos="zoom-up" data-aos-delay="700">Lihat Proyek</a>
-    </div>
+  <!-- Portfolio Section with Slide-In Animation -->
+  <div class="container mx-auto px-6 py-12" id="portfolio">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <!-- Portfolio Item 1 with Slide-In -->
+      <div class="portfolio-item bg-white text-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 slide-in" data-aos="zoom-in" data-aos-delay="100">
+        <img src="landingpage.jpg" alt="Proyek 1" class="w-full h-64 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold hover-glow">Website Landing Page</h3>
+          <p class="text-gray-600 mt-4">Landing page responsif dengan animasi dan elemen interaktif untuk tujuan pemasaran.</p>
+          <a href="#" class="mt-4 inline-block px-8 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300">Lihat Proyek</a>
+        </div>
+      </div>
 
-    <!-- Portfolio Item 3 -->
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="700">
-      <img src="my logo.png" alt="Proyek 3">
-      <h3 data-aos="zoom-in">Website Portofolio Pribadi</h3>
-      <p>Website pribadi dengan desain interaktif untuk menampilkan keahlian dan proyek-proyek.</p>
-      <a href="index.html" data-aos="zoom-up" data-aos-delay="500">Lihat Proyek</a>
-    </div>
+      <!-- Portfolio Item 2 with Slide-In -->
+      <div class="portfolio-item bg-white text-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 slide-in" data-aos="zoom-in" data-aos-delay="200">
+        <img src="blogweb.jpeg" alt="Proyek 2" class="w-full h-64 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold hover-glow">Website Blog</h3>
+          <p class="text-gray-600 mt-4">Desain UI/UX modern untuk website blog dengan manajemen konten yang mudah.</p>
+          <a href="#" class="mt-4 inline-block px-8 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300">Lihat Proyek</a>
+        </div>
+      </div>
 
-    <!-- Portfolio Item 4 -->
-    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="600">
-      <img src="nazzkitchen.jpg" alt="Proyek 4">
-      <h3 data-aos="zoom-in">Sistem Pemesanan Restoran</h3>
-      <p>Website untuk memesan makanan secara online dengan antarmuka pengguna yang mudah dipahami.</p>
-      <a href="#" data-aos="zoom-up" data-aos-delay="700">Lihat Proyek</a>
+      <!-- Portfolio Item 3 with Slide-In -->
+      <div class="portfolio-item bg-white text-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 slide-in" data-aos="zoom-in" data-aos-delay="300">
+        <img src="my logo.png" alt="Proyek 3" class="w-full h-64 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold hover-glow">Website Portofolio Pribadi</h3>
+          <p class="text-gray-600 mt-4">Website pribadi dengan desain interaktif untuk menampilkan keahlian dan proyek-proyek.</p>
+          <a href="index.html" class="mt-4 inline-block px-8 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300">Lihat Proyek</a>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 4 with Slide-In -->
+      <div class="portfolio-item bg-white text-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 slide-in" data-aos="zoom-in" data-aos-delay="400">
+        <img src="nazzkitchen.jpg" alt="Proyek 4" class="w-full h-64 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold hover-glow">Sistem Pemesanan Restoran</h3>
+          <p class="text-gray-600 mt-4">Website untuk memesan makanan secara online dengan antarmuka pengguna yang mudah dipahami.</p>
+          <a href="#" class="mt-4 inline-block px-8 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300">Lihat Proyek</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Footer Section -->
-  <footer>
-    <p data-aos="fade-up">&copy; 2024 Portfolio Yehezkiel. Semua hak cipta dilindungi.</p>
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>&copy; 2024 Portfolio Yehezkiel. Semua hak cipta dilindungi.</p>
   </footer>
 
+  <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
-    // Sidebar toggle script
-    const logo = document.querySelector('.logo');
-    const sidebar = document.querySelector('.sidebar');
-
-    logo.addEventListener('click', () => {
-      sidebar.classList.toggle('show');
-    });
-
-    // Close sidebar when clicking outside of it
-    window.addEventListener('click', (event) => {
-      if (!event.target.closest('.sidebar') && !event.target.closest('.logo')) {
-        sidebar.classList.remove('show');
-      }
+    AOS.init({
+      duration: 1000, // Set the duration of the AOS animation
+      easing: 'ease-out', // Use ease-out for smoother transitions
+      once: true, // Animation happens only once when the element is visible
     });
   </script>
-
 </body>
 </html>
