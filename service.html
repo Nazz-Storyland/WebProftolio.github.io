@@ -1,195 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Masud Iqbal - Web Designer</title>
+    <title>Layanan Kami - Masud Iqbal - Web Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-
-        /* General body and layout styles */
+        /* General body styles */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-image: url('bg16.jpg');
-            background-size: cover; /* Ensure background covers the whole page */
-            background-position: center; /* Center the background image */
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
-            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            min-height: 100vh;
         }
-    
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-    
-        /* Header styles */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-    
-        header .logo {
-            color: #fff;
-            text-decoration: none;
-            font-size: 24px;
-        }
-    
-        header ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-        }
-    
-        header ul li a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            padding: 5px;
-        }
-    
-        header ul li a:hover {
-            background-color: #555;
-        }
-    
-        /* Main section styles */
-        main {
-            padding: 40px 0;
-        }
-    
-        main h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: white; /* Make the heading text white */
-        }
-    
-        .services {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            justify-content: space-between;
-        }
-    
-        .service {
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            transition: transform 0.3s ease;
-        }
-    
-        .service h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    
-        .service p {
-            line-height: 1.5;
-        }
-    
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            /* Adjust the layout on smaller screens */
-            .service {
-                flex: 1 0 48%; /* Make each service take up around half the space */
-                margin: 10px 0; /* Reduce margin for smaller screens */
-            }
-            main h1 {
-                font-size: 24px; /* Make the heading smaller for smaller devices */
-            }
-            header .logo {
-                font-size: 20px; /* Smaller logo text for mobile */
-            }
-            header ul {
-                display: block;
-                text-align: center;
-            }
-            header ul li {
-                margin: 10px 0; /* Stack the navigation items */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            /* Further adjustments for very small screens (smartphones) */
-            main h1 {
-                font-size: 20px;
-            }
-            .service {
-                flex: 1 0 100%; /* Stack the services vertically */
-            }
-            header .logo {
-                font-size: 18px;
-            }
-            header ul li a {
-                font-size: 16px; /* Make the menu items smaller */
-            }
-        }
-
-   </style>
+    </style>
 </head>
-<body>
-    <header data-aos="fade-down" data-aos-delay="500">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo" data-aos="zoom-in">NANDA</a>
-                <ul>
-                    <li data-aos="zoom-in" data-aos-delay="550"><a href="index.html">HOME</a></li>
-                    <li data-aos="zoom-in" data-aos-delay="600"><a href="service.html">SERVICES</a></li>
-                    <li data-aos="zoom-in" data-aos-delay="650"><a href="ABOUT.html">ABOUT</a></li>
-                    <li data-aos="zoom-in" data-aos-delay="700"><a href="PORTFOLIO.html">PORTFOLIO</a></li>
-                </ul>
-            </nav>
+
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-transparent py-4 z-50 shadow-xl">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition ease-in-out duration-300"
+                data-aos="fade-down" data-aos-delay="500">NANDA</a>
+            <ul class="flex space-x-6 text-lg text-white">
+                <li><a href="index.html" class="hover:text-blue-500 transition ease-in-out duration-300" data-aos="zoom-in"
+                        data-aos-delay="550">BERANDA</a></li>
+                <li><a href="service.html" class="hover:text-blue-500 transition ease-in-out duration-300" data-aos="zoom-in"
+                        data-aos-delay="600">LAYANAN</a></li>
+                <li><a href="ABOUT.html" class="hover:text-blue-500 transition ease-in-out duration-300" data-aos="zoom-in"
+                        data-aos-delay="650">TENTANG</a></li>
+                <li><a href="PORTFOLIO.html" class="hover:text-blue-500 transition ease-in-out duration-300" data-aos="zoom-in"
+                        data-aos-delay="700">PORTFOLIO</a></li>
+            </ul>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <h1 data-aos="fade-down" data-aos-delay="600">Nazz Services</h1> <!-- Teks ini sekarang akan berwarna putih -->
-            <section class="services">
-                <div class="service" data-aos="flip-up" data-aos-delay="600">
-                    <h2>Web Design</h2>
-                    <p>Sebagai seorang desainer web, saya berfokus pada pembuatan tampilan website yang menarik dan user-friendly. Dengan pendekatan desain yang modern dan responsif, saya memastikan bahwa setiap situs yang saya bangun tidak hanya estetik, tetapi juga mudah dinavigasi oleh pengunjung. Saya mengutamakan pengalaman pengguna (UX) untuk menciptakan desain yang sesuai dengan kebutuhan klien, meningkatkan keterlibatan, dan memperkuat identitas merek.</p>
+    <!-- Main content -->
+    <main class="pt-20 pb-16">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8 animate__animated animate__fadeIn" data-aos="fade-down"
+                data-aos-delay="600">Layanan Nazz</h1>
+
+            <!-- Services section -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service p-6 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition ease-in-out duration-300"
+                    data-aos="flip-up" data-aos-delay="600">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Desain Web</h2>
+                    <p class="text-gray-700 leading-relaxed">Sebagai seorang desainer web, saya fokus pada pembuatan tampilan situs web yang menarik dan ramah pengguna. Dengan pendekatan desain modern dan responsif, saya memastikan setiap situs yang saya buat tidak hanya estetik tetapi juga mudah digunakan.</p>
                 </div>
-                <div class="service" data-aos="flip-up" data-aos-delay="700">
-                    <h2>Web Development</h2>
-                    <p>Dalam pengembangan web, saya menggabungkan teknologi terkini untuk menciptakan situs yang cepat, aman, dan dapat diandalkan. Saya memiliki pengalaman dalam membangun website dari dasar, mulai dari pengembangan frontend yang interaktif hingga backend yang kuat dan terstruktur. Setiap proyek yang saya tangani b</p>
+
+                <!-- Service 2 -->
+                <div class="service p-6 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition ease-in-out duration-300"
+                    data-aos="flip-up" data-aos-delay="700">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Pengembangan Web</h2>
+                    <p class="text-gray-700 leading-relaxed">Dalam pengembangan web, saya menggabungkan teknologi terbaru untuk menciptakan situs yang cepat, aman, dan dapat diandalkan. Dari pengembangan frontend yang interaktif hingga backend yang kuat, saya membangun situs dari dasar hingga selesai.</p>
                 </div>
-                <div class="service" data-aos="flip-up" data-aos-delay="800">
-                    <h2>SEO Optimization</h2>
-                    <p>Dengan pendekatan SEO yang terstruktur, saya membantu situs web Anda untuk tampil lebih tinggi di mesin pencari seperti Google. Saya menerapkan teknik-teknik optimasi SEO yang efektif, termasuk riset kata kunci, pengoptimalan konten, dan peningkatan kecepatan situs, untuk memastikan website Anda mudah ditemukan oleh audiens target. Fokus utama saya adalah untuk meningkatkan visibilitas online, menarik lebih banyak pengunjung, dan akhirnya, meningkatkan konversi serta ROI (Return on Investment) untuk bisnis Anda.</p>
+
+                <!-- Service 3 -->
+                <div class="service p-6 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition ease-in-out duration-300"
+                    data-aos="flip-up" data-aos-delay="800">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Optimasi SEO</h2>
+                    <p class="text-gray-700 leading-relaxed">Dengan pendekatan SEO yang terstruktur, saya membantu situs Anda untuk muncul lebih tinggi di hasil pencarian Google. Saya menggunakan teknik-teknik SEO efektif, seperti riset kata kunci, pengoptimalan konten, dan peningkatan kecepatan situs untuk visibilitas yang lebih baik.</p>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>Hello, I Am Yehezkiel Nanda Pradana</p>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center">
+        <p class="text-sm">Halo, Saya Yehezkiel Nanda Pradana</p>
     </footer>
 
+    <!-- AOS Animation Initialization -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
 
 </body>
+
 </html>
+
