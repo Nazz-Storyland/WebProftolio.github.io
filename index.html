@@ -12,11 +12,28 @@
         body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('bg1.jpg') center/cover no-repeat fixed; color: #fff; display: flex; flex-direction: column; }
 
         /* Header styles */
-        header { background: rgba(0, 0, 0, 0.5); padding: 20px 0; position: relative; }
+        header {
+            background: rgba(98, 12, 107, 0.5);
+            padding: 20px 0;
+            position: relative;
+            animation: headerAnimation 5s ease-in-out infinite;
+        }
+        @keyframes headerAnimation {
+            0% { transform: translateY(-20px); opacity: 0; }
+            50% { transform: translateY(10px); opacity: 1; }
+            100% { transform: translateY(-20px); opacity: 0; }
+        }
+
         nav { display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; top: 0; left: 0; padding: 20px; }
         nav ul { list-style: none; display: flex; }
         nav ul li { margin: 0 15px; }
-        nav a { color: #fff; text-decoration: none; font-weight: 600; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        
+        /* Hover effect on nav links */
+        nav a:hover {
+            color: #f0f0f0;
+            text-shadow: 0 0 10px #fff, 0 0 20px #f0f0f0;
+        }
 
         /* Hamburger menu */
         .hamburger {
@@ -64,17 +81,47 @@
 
         /* Main styles */
         main { display: flex; justify-content: space-between; align-items: center; padding: 50px 0; width: 100%; flex-wrap: wrap; }
-        .content { max-width: 600px; flex: 1; }
+        .content { max-width: 600px; flex: 1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 8px; transition: all 0.3s ease; }
+        .content h1, .content h2 {
+            animation: moveText 5s linear infinite;
+        }
+
+        /* Animation for moving text (WELCOME! and NANDA) */
+        @keyframes moveText {
+            0% { transform: translateX(-10px); color: #fff; }
+            50% { transform: translateX(10px); color: #ff00ff; }
+            100% { transform: translateX(-10px); color: #fff; }
+        }
+
         .content h1 { font-size: 3em; }
         .content h2 { font-size: 2em; }
         .content p { font-size: 1.2em; line-height: 1.5; }
         .social-links { display: flex; margin-top: 20px; }
-        .social-links a { margin-right: 10px; color: #fff; font-size: 1.5em; }
-        .image { flex: 1; margin-left: 30px; }
+        .social-links a { margin-right: 10px; color: #fff; font-size: 1.5em; transition: all 0.3s ease; }
+        
+        /* Hover effect on social media links */
+        .social-links a:hover {
+            color: #f0f0f0;
+            text-shadow: 0 0 10px #fff, 0 0 20px #f0f0f0;
+        }
+
+        /* Image styles with hover effect */
+        .image { flex: 1; margin-left: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .image img { width: 100%; height: auto; }
 
+        /* Hover effect on image */
+        .image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+        }
+
         /* Footer styles */
-        footer { text-align: center; padding: 20px 0; background: rgba(0, 0, 0, 0.5); margin-top: auto; }
+        footer { text-align: center; padding: 20px 0; background: rgba(0, 0, 0, 0.5); margin-top: auto; box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7); transition: all 0.3s ease; }
+
+        /* Hover effect on footer */
+        footer:hover {
+            box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.9);
+        }
 
         /* Media query for responsive design */
         @media screen and (max-width: 768px) {
@@ -204,7 +251,6 @@
         hamburgerMenu.classList.toggle('open');
     });
 
-    // Add this new function to close the sidebar when clicking outside of it
     window.addEventListener('click', (event) => {
         if (!event.target.closest('.sidebar') && !event.target.closest('.logo') && !event.target.closest('.hamburger')) {
             menu.classList.remove('show');
