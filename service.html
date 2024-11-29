@@ -8,13 +8,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* General body styles */
-        body {
-            background-image: url('bg16.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
+        /* Custom animations for fade and slide effects */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        /* Hover effect for cards */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -22,9 +40,9 @@
 <body class="bg-gray-900 text-white">
 
     <!-- Navbar -->
-    <header class="fixed top-0 left-0 right-0 bg-transparent py-4 z-50 shadow-xl">
+    <header class="fixed top-0 left-0 right-0 bg-transparent py-6 z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center px-6">
-            <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition ease-in-out duration-300"
+            <a href="index.html" class="text-3xl font-extrabold text-white hover:text-blue-500 transition ease-in-out duration-300"
                 data-aos="fade-down" data-aos-delay="500">NANDA</a>
             <ul class="flex space-x-6 text-lg text-white">
                 <li><a href="index.html" class="hover:text-blue-500 transition ease-in-out duration-300" data-aos="zoom-in"
@@ -39,33 +57,45 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('bg16.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto h-full flex items-center justify-center text-center text-white px-6">
+            <div data-aos="fade-up" class="max-w-2xl">
+                <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 animate__animated animate__fadeIn">Layanan Profesional Desain Web</h1>
+                <p class="text-lg sm:text-xl mb-8 animate__animated animate__fadeIn animate__delay-1s">Solusi desain web terbaik untuk bisnis Anda. Kami menyediakan layanan terbaik di bidang pengembangan dan optimasi website yang ramah pengguna.</p>
+                <a href="#layanan" class="px-8 py-3 bg-blue-500 text-white font-bold rounded-full text-lg hover:bg-blue-600 transition duration-300">Lihat Layanan Kami</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Main content -->
-    <main class="pt-20 pb-16">
+    <main class="py-16 sm:py-20">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-8 animate__animated animate__fadeIn" data-aos="fade-down"
-                data-aos-delay="600">Layanan Nazz</h1>
+            <h2 id="layanan" class="text-3xl sm:text-4xl font-bold mb-16 animate__animated animate__fadeIn" data-aos="fade-down"
+                data-aos-delay="600">Layanan Kami</h2>
 
             <!-- Services section -->
             <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service p-6 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition ease-in-out duration-300"
-                    data-aos="flip-up" data-aos-delay="600">
-                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Desain Web</h2>
-                    <p class="text-gray-700 leading-relaxed">Sebagai seorang desainer web, saya fokus pada pembuatan tampilan situs web yang menarik dan ramah pengguna. Dengan pendekatan desain modern dan responsif, saya memastikan setiap situs yang saya buat tidak hanya estetik tetapi juga mudah digunakan.</p>
+                <div class="service-card bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Desain Web</h3>
+                    <p class="text-gray-600 leading-relaxed">Kami merancang website dengan desain yang bersih, modern, dan responsif untuk memberikan pengalaman terbaik bagi pengguna.</p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service p-6 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition ease-in-out duration-300"
-                    data-aos="flip-up" data-aos-delay="700">
-                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Pengembangan Web</h2>
-                    <p class="text-gray-700 leading-relaxed">Dalam pengembangan web, saya menggabungkan teknologi terbaru untuk menciptakan situs yang cepat, aman, dan dapat diandalkan. Dari pengembangan frontend yang interaktif hingga backend yang kuat, saya membangun situs dari dasar hingga selesai.</p>
+                <div class="service-card bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="700">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pengembangan Web</h3>
+                    <p class="text-gray-600 leading-relaxed">Kami menggunakan teknologi terbaru untuk mengembangkan website yang cepat, aman, dan dapat diandalkan di berbagai platform.</p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="service p-6 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition ease-in-out duration-300"
-                    data-aos="flip-up" data-aos-delay="800">
-                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Optimasi SEO</h2>
-                    <p class="text-gray-700 leading-relaxed">Dengan pendekatan SEO yang terstruktur, saya membantu situs Anda untuk muncul lebih tinggi di hasil pencarian Google. Saya menggunakan teknik-teknik SEO efektif, seperti riset kata kunci, pengoptimalan konten, dan peningkatan kecepatan situs untuk visibilitas yang lebih baik.</p>
+                <div class="service-card bg-white rounded-xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="800">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Optimasi SEO</h3>
+                    <p class="text-gray-600 leading-relaxed">Dengan teknik SEO terbaik, kami meningkatkan peringkat website Anda di mesin pencari Google agar lebih mudah ditemukan oleh audiens target.</p>
                 </div>
             </section>
         </div>
@@ -73,7 +103,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-6 text-center">
-        <p class="text-sm">Halo, Saya Yehezkiel Nanda Pradana</p>
+        <p class="text-sm">© 2024 Yehezkiel Nanda Pradana. All Rights Reserved.</p>
     </footer>
 
     <!-- AOS Animation Initialization -->
@@ -85,4 +115,3 @@
 </body>
 
 </html>
-
