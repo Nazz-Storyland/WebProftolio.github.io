@@ -18,11 +18,52 @@
         nav ul li { margin: 0 15px; }
         nav a { color: #fff; text-decoration: none; font-weight: 600; }
 
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Sidebar styles for mobile */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background: #333;
+            transition: left 0.3s ease-in-out;
+        }
+
+        .sidebar.show {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
         /* Container styles */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; flex: 1; }
 
         /* Main styles */
-        main { display: flex; justify-content: space-between; align-items: center; padding: 50px 0; width: 100%; }
+        main { display: flex; justify-content: space-between; align-items: center; padding: 50px 0; width: 100%; flex-wrap: wrap; }
         .content { max-width: 600px; flex: 1; }
         .content h1 { font-size: 3em; }
         .content h2 { font-size: 2em; }
@@ -46,42 +87,33 @@
                 margin-top: 20px;
             }
 
-            /* Sidebar CSS for mobile view */
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: -250px;
-                width: 250px;
-                height: 100vh;
-                background: #333;
-                transition: left 0.3s ease-in-out;
-            }
-
-            .sidebar.show {
-                left: 0;
-            }
-
-            .sidebar ul {
-                list-style: none;
-                padding: 20px;
-            }
-
-            .sidebar ul li a {
-                color: #fff;
-                text-decoration: none;
-                display: block;
-                padding: 10px;
-            }
-
             /* Mobile header adjustments */
             nav ul {
+                display: none;
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 10px 0;
             }
-
             nav ul li {
                 margin: 10px 0;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hamburger.open span:nth-child(1) {
+                transform: rotate(45deg);
+                transform-origin: top left;
+            }
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.open span:nth-child(3) {
+                transform: rotate(-45deg);
+                transform-origin: bottom left;
+            }
+
+            nav ul.show {
+                display: flex;
             }
         }
 
@@ -101,7 +133,7 @@
             }
             .image {
                 margin-left: 0;
-                margin-top: 20px;
+                margin-top: 30px;
             }
             .image img {
                 width: 90%;
@@ -117,7 +149,12 @@
     <div class="container">
         <nav>
             <a href="#" class="logo">NANDA</a>
-            <ul>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="menu">
                 <li data-aos="fade-down" data-aos-delay="300"><a href="index.html">HOME</a></li>
                 <li data-aos="fade-down" data-aos-delay="400"><a href="ABOUT.html">ABOUT</a></li>
                 <li data-aos="fade-down" data-aos-delay="500"><a href="service.html">SERVICES</a></li>
@@ -159,15 +196,19 @@
 <script>
     const logo = document.querySelector('.logo');
     const sidebar = document.querySelector('.sidebar');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const menu = document.getElementById('menu');
 
-    logo.addEventListener('click', () => {
-        sidebar.classList.toggle('show');
+    hamburgerMenu.addEventListener('click', () => {
+        menu.classList.toggle('show');
+        hamburgerMenu.classList.toggle('open');
     });
 
     // Add this new function to close the sidebar when clicking outside of it
     window.addEventListener('click', (event) => {
-        if (!event.target.closest('.sidebar') && !event.target.closest('.logo')) {
-            sidebar.classList.remove('show');
+        if (!event.target.closest('.sidebar') && !event.target.closest('.logo') && !event.target.closest('.hamburger')) {
+            menu.classList.remove('show');
+            hamburgerMenu.classList.remove('open');
         }
     });
 </script>
