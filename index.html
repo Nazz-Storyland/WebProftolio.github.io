@@ -9,11 +9,22 @@
         /* Global styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: 100%; }
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('bg1.jpg') center/cover no-repeat fixed; color: #fff; display: flex; flex-direction: column; }
+        body { font-family: 'Poppins', sans-serif; color: #fff; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+
+        /* Video background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensure video is behind other content */
+        }
 
         /* Header styles */
         header {
-            background: rgba(98, 12, 107, 0.5);
+            background: rgba(66, 61, 66, 0.5);
             padding: 20px 0;
             position: relative;
             animation: headerAnimation 2s ease-in-out forwards;
@@ -80,7 +91,8 @@
 
         /* Main styles */
         main { display: flex; justify-content: space-between; align-items: center; padding: 50px 0; width: 100%; flex-wrap: wrap; }
-        .content { max-width: 600px; flex: 1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 8px; transition: all 0.3s ease; }
+        .content { max-width: 600px; flex: 1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius ```html
+: 8px; transition: all 0.3s ease; }
         .content h1, .content h2 {
             animation: fadeInUp 2s ease-out;
         }
@@ -193,80 +205,84 @@
     </style>
 </head>
 <body>
-<div class="loading-container">
-  <div class="loading-spinner"></div>
-</div>
-<header data-aos="fade-down" data-aos-delay="300">
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">NANDA</a>
-            <div class="hamburger" id="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="menu">
-                <li data-aos="fade-down" data-aos-delay="300"><a href="index.html">HOME</a></li>
-                <li data-aos="fade-down" data-aos-delay="400"><a href="ABOUT.html">ABOUT</a></li>
-                <li data-aos="fade-down" data-aos-delay="500"><a href="service.html">SERVICES</a></li>
-                <li data-aos="fade-down" data-aos-delay="600"><a href="portfolio.html">PORTFOLIO</a></li>
-                <li data-aos="fade-down" data-aos-delay="700"><a href="BLOG.html">BLOG</a></li>
-                <li data-aos="fade-down" data-aos-delay="800"><a href="CONTACT.html">CONTACT</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <video autoplay muted loop class="video-background">
+        <source src="bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-<main>
-    <div class="container">
-        <div class="content">
-            <h1  data-aos="fade-up">WELCOME!</h1>
-            <h2 data-aos="fade-left" data-aos-delay="600">I Am Web Designer</h2>
-            <p data-aos="zoom-up" data-aos-delay="700">Halo, saya Yehezkiel Nanda Pradana, Junior Web Developer yang belajar di SMK Pangudi Luhur Seputih Mataram. Saya menguasai HTML, CSS, JavaScript, dan mulai belajar framework serta tools populer. Di portfolio ini, Anda dapat melihat karya saya dalam desain web dan pengembangan front-end.</p>
-            <p data-aos="zoom-up" data-aos-delay="750">Saya terus berkembang dan siap untuk berkolaborasi atau belajar lebih lanjut!</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-behance"></i></a>
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+    </div>
+    <header data-aos="fade-down" data-aos-delay="300">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">NANDA</a>
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="menu">
+                    <li data-aos="fade-down" data-aos-delay="300"><a href="index.html">HOME</a></li>
+                    <li data-aos="fade-down" data-aos-delay="400"><a href="ABOUT.html">ABOUT</a></li>
+                    <li data-aos="fade-down" data-aos-delay="500"><a href="service.html">SERVICES</a></li>
+                    <li data-aos="fade-down" data-aos-delay="600"><a href="portfolio.html">PORTFOLIO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1 data-aos="fade-up">WELCOME!</h1>
+                <h2 data-aos="fade-left" data-aos-delay="600">I Am Web Designer</h2>
+                <p data-aos="zoom-up" data-aos-delay="700">Halo, saya Yehezkiel Nanda Pradana, Junior Web Developer yang belajar di SMK Pangudi Luhur Seputih Mataram. Saya menguasai HTML, CSS, JavaScript, dan mulai belajar framework serta tools populer. Di portfolio ini, Anda dapat melihat karya saya dalam desain web dan pengembangan front-end.</p>
+                <p data-aos="zoom-up" data-aos-delay="750">Saya terus berkembang dan siap untuk berkolaborasi atau belajar lebih lanjut!</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="image" data-aos="zoom-in" data-aos-delay="500">
+                <img src="my logo.png" alt="Masud Iqbal">
             </div>
         </div>
-        <div class="image" data-aos="zoom-in" data-aos-delay="500">
-            <img src="my logo.png" alt="Masud Iqbal">
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Hello, I Am Yehezkiel Nanda Pradana</p>
         </div>
-    </div>
-</main>
+    </footer>
 
-<footer>
-    <div class="container">
-        <p>Hello, I Am Yehezkiel Nanda Pradana</p>
-    </div>
-</footer>
+    <script>
+        const logo = document.querySelector('.logo');
+        const sidebar = document.querySelector('.sidebar');
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const menu = document.getElementById('menu');
 
-<script>
-    const logo = document.querySelector('.logo');
-    const sidebar = document.querySelector('.sidebar');
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const menu = document.getElementById('menu');
+        hamburgerMenu.addEventListener('click', () => {
+            menu.classList.toggle('show');
+            hamburgerMenu.classList.toggle('open');
+        });
 
-    hamburgerMenu.addEventListener('click', () => {
-        menu.classList.toggle('show');
-        hamburgerMenu.classList.toggle('open');
-    });
+        window.addEventListener('click', (event) => {
+            if (!event.target.closest('.sidebar') && !event.target.closest('.logo') && !event.target.closest('.hamburger')) {
+                menu.classList.remove('show');
+                hamburgerMenu.classList.remove('open');
+            }
+        });
+    </script>
 
-    window.addEventListener('click', (event) => {
-        if (!event.target.closest('.sidebar') && !event.target.closest('.logo') && !event.target.closest('.hamburger')) {
-            menu.classList.remove('show');
-            hamburgerMenu.classList.remove('open');
-        }
-    });
-</script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
+</html>
 </html>
