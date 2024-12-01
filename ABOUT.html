@@ -8,6 +8,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* Add styles to make the video full-screen and autoplay */
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
     /* Custom Animation for page load */
     @keyframes fadeIn {
       0% {
@@ -31,12 +42,18 @@
 </head>
 <body class="bg-gradient-to-br from-purple-600 to-blue-500 text-gray-100 min-h-screen flex flex-col">
 
+  <!-- Add the video element -->
+  <video autoplay loop muted>
+    <source src="bg2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur-lg py-4 shadow-lg z-50">
     <ul class="flex justify-center space-x-8 text-white text-lg">
       <li><a href="index.html" class="hover:bg-indigo-600 px-4 py-2 rounded-lg transition">Beranda</a></li>
       <li><a href="service.html" class="hover:bg-indigo-600 px-4 py-2 rounded-lg transition">Service</a></li>
-      <li><a href="portfolio.html" class="hover:bg-indigo-600 px-4 py-2 rounded-lg transition">Portfolio</a></li>
+      <li><a href="Portfolio.html" class="hover:bg-indigo-600 px-4 py-2 rounded-lg transition">Portfolio</a></li>
     </ul>
   </nav>
 
